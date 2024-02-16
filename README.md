@@ -13,5 +13,8 @@ Es una aplicación de una boutique de moda juvenil.
 -Contactus
 ![image](https://github.com/crizcode/aura-radiancia_app/assets/88556496/711b3a71-7a1a-4006-b7dd-3f8c734bcbbe)
 
+-Detail
+![image](https://github.com/crizcode/aura-radiancia_app/assets/88556496/db0173a2-b5b3-4ec5-99ad-c40207bf2118)
+
 - Login
 ![image](https://github.com/crizcode/aura-radiancia_app/assets/88556496/ba17f63f-c8b3-4eb0-8b88-2fe64317e0cc)

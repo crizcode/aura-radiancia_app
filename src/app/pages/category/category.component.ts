@@ -1,22 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductModel } from '../../context/product/domain/models/product.model';
+import { ProductAdapterService } from '../../context/product/infrastucture/adapters/product.adapter.service';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './category.component.html',
-  styleUrl: './category.component.css'
 })
-export class CategoryComponent {
-  desc_prod = "Vestido verde modelo 1"
-  desc_prod2 = "vestido temporada"
-  prec_prod = 125.25
 
-  public counter: number = 1;
+export class CategoryComponent implements OnInit {
+  public products: ProductModel[] = [];
+  public error: string = '';
 
-  increaseBy(value: number) {
-    this.counter = this.counter + value < 0 ? 0 : this.counter + value;
+  constructor(private productService: ProductAdapterService, private router: Router) {}
+
+  ngOnInit() {
+    this.getAllProducts();
   }
 
+  getAllProducts() {
+    this.productService.findAll().subscribe(
+      (products: ProductModel[]) => {
+        this.products = products;
+      },
+      (error) => {
+        this.error = 'Error al cargar los productos';
+      }
+    );
+  }
+
+   // navegar a detail
+   showProductDetail(productId: number) {
+    this.router.navigate(['/detail', productId]);
+  }
 
 }

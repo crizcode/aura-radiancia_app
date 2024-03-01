@@ -1,0 +1,252 @@
+<div x-data="{ cartOpen: false , isOpen: false }" class="bg-white mt-20">
+    <!---
+    <div :class="cartOpen ? 'translate-x-0 ease-out' : 'translate-x-full ease-in'"
+        class="fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
+        <hr class="my-3">
+        <div class="flex justify-between mt-6">
+            <div class="flex">
+                <img class="h-20 w-20 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                    alt="">
+                <div class="mx-3">
+                    <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+                    <div class="flex items-center mt-2">
+                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        <span class="text-gray-700 mx-2">2</span>
+                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <span class="text-gray-600">20$</span>
+        </div>
+        <div class="flex justify-between mt-6">
+            <div class="flex">
+                <img class="h-20 w-20 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                    alt="">
+                <div class="mx-3">
+                    <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+                    <div class="flex items-center mt-2">
+                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        <span class="text-gray-700 mx-2">2</span>
+                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <span class="text-gray-600">20$</span>
+        </div>
+        <div class="flex justify-between mt-6">
+            <div class="flex">
+                <img class="h-20 w-20 object-cover rounded"
+                    src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                    alt="">
+                <div class="mx-3">
+                    <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+                    <div class="flex items-center mt-2">
+                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        <span class="text-gray-700 mx-2">2</span>
+                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <span class="text-gray-600">20$</span>
+        </div>
+        <div class="mt-8">
+            <form class="flex items-center justify-center">
+                <input class="form-input w-48" type="text" placeholder="Add promocode">
+                <button
+                    class="ml-3 flex items-center px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    <span>Apply</span>
+                </button>
+            </form>
+        </div>
+        <a
+            class="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+            <span>Chechout</span>
+            <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+        </a>
+    </div> -->
+    <main *ngIf="productDetails" class="container mx-auto px-6" class="my-8">
+
+
+
+        <div class="container mx-auto px-6">
+            <div class="md:flex md:items-center">
+
+                <div class="swiper-wrapper translate-x-0 translate-y-0 translate-z-0 ml-20 mr-5">
+                    <div class="swiper-wrapper"
+                        style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                        <div class="swiper-slide cursor-pointer swiper-slide-visible swiper-slide-active"
+                            style="width: 66px; height: 88px; margin-bottom: 12px;">
+                            <span
+                                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                                <span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+                                    <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                                        alt="" aria-hidden="true" src="{{productDetails.imagenUrl}}">
+                                </span>
+                                <img alt="Color Block Urban Pocket Stitching Fashion Pants"
+                                    src="{{productDetails.imagenUrl}}" decoding="async" data-nimg="intrinsic"
+                                    class="absolute left-[-1px] top-[-1px] object-cover small-image"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-wrapper"
+                        style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                        <div class="swiper-slide cursor-pointer swiper-slide-visible swiper-slide-active"
+                            style="width: 66px; height: 88px; margin-bottom: 12px;">
+                            <span
+                                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                                <span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+                                    <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                                        alt="" aria-hidden="true" src="{{productDetails.imagenUrl}}">
+                                </span>
+                                <img alt="Color Block Urban Pocket Stitching Fashion Pants"
+                                    src="{{productDetails.imagenUrl}}" decoding="async" data-nimg="intrinsic"
+                                    class="absolute left-[-1px] top-[-1px] object-cover small-image"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover">
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-wrapper"
+                        style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                        <div class="swiper-slide cursor-pointer swiper-slide-visible swiper-slide-active"
+                            style="width: 66px; height: 88px; margin-bottom: 12px;">
+                            <span
+                                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                                <span
+                                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+                                    <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                                        alt="" aria-hidden="true" src="{{productDetails.imagenUrl}}">
+                                </span>
+                                <img alt="Color Block Urban Pocket Stitching Fashion Pants"
+                                    src="{{productDetails.imagenUrl}}" decoding="async" data-nimg="intrinsic"
+                                    class="absolute left-[-1px] top-[-1px] object-cover small-image"
+                                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover">
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="w-full h-64 md:w-1/2 lg:h-96">
+                    <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
+                        src="{{productDetails.imagenUrl}}" alt="photo">
+                </div>
+                <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
+                    <h3 class="text-gray-700 uppercase text-lg"> {{productDetails.nombre}}</h3>
+                    <span class="text-gray-500 mt-3">S/ {{productDetails.precio}} </span>
+                    <hr class="my-3">
+
+
+
+                    <div class="inline-flex items-center mt-2">
+                        <button (click)="increaseBy(-1)"
+                            class="bg-white rounded-l border text-gray-600 hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center px-2 py-1 border-r border-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                            </svg>
+                        </button>
+                        <div
+                            class="bg-gray-100 border-t border-b border-gray-100 text-gray-600 hover:bg-gray-100 inline-flex items-center px-4 py-1 select-none">
+                            {{ counter }}
+                        </div>
+                        <button (click)="increaseBy(+1)"
+                            class="bg-white rounded-r border text-gray-600 hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center px-2 py-1 border-r border-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center mt-6">
+                        <button
+                            class="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">Order
+                            Now</button>
+                        <button (click)="addToCart(productDetails,counter)"
+                            class="mx-2 text-gray-600 border rounded-md p-2 hover:bg-gray-200 focus:outline-none">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-16">
+                <h3 class="text-gray-600 text-2xl font-medium">More Products</h3>
+                <div class="flex flex-wrap justify-center items-stretch mt-6">
+
+                    <div *ngFor="let product of products" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4">
+                        <div class="max-w-sm rounded-md shadow-md overflow-hidden">
+                            <div class="flex items-end justify-end h-56 w-full bg-cover"
+                                [style.background-image]="'url(' + product.imagenUrl + ')'">
+                                <button (click)="addToCart(product, 1)"
+                                    class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                    <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="px-5 py-3">
+                                <h3 class="text-gray-700 uppercase"> {{product.nombre}} </h3>
+                                <span class="text-gray-500 mt-2"> {{product.precio}} </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>

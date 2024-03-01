@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { CategoryComponent } from '../../category/category.component';
+import { Component, EventEmitter, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -10,5 +10,11 @@ import { CategoryComponent } from '../../category/category.component';
   styles: ``
 })
 export class HeaderComponent {
+
+  @Output() openCartEvent = new EventEmitter<void>();
+
+  openCart() {
+    this.openCartEvent.emit();
+  }
 
 }

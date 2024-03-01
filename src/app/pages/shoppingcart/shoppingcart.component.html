@@ -1,0 +1,159 @@
+<div class="bg-neutral-50 py-12">
+  <div class="container mx-auto my-12">
+    <div class="flex flex-col gap-6 md:flex-row m-20">
+      <div class="flex-1 shrink-0 rounded-sm border border-neutral-200 bg-white px-4 py-8 shadow-sm">
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold">Carro (2 items)</h3>
+        </div>
+        <ul role="list" class="-my-6 divide-y divide-neutral-200">
+          <!-- product item 1 -->
+
+          <li *ngFor="let item of cartItems" class="flex py-6">
+            <div class="h-32 w-24 flex-shrink-0 overflow-hidden rounded-sm border bg-neutral-50">
+              <img src="{{item.product.imagenUrl}}"
+                alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
+                class="h-full w-full object-cover object-center" />
+            </div>
+
+            <div class="ml-4 flex flex-1 flex-col">
+              <div>
+                <div class="flex justify-between text-sm text-gray-900">
+                  <h3 class="text-base font-bold"><a href="#"> {{item.product.nombre}} </a></h3>
+                  <button (click)="eliminarItem(item)"  type="button" class="flex gap-2 font-medium text-neutral-400 hover:text-neutral-900">
+                    <svg class="h-4 w-4 stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                      </path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="mt-2">
+                  <p class="text-xs text-neutral-400"> {{item.product.descripcion}} </p>
+                </div>
+              </div>
+              <div class="mt-auto flex flex-1 items-end justify-between text-sm">
+                
+                
+                <div>
+                  <div class="flex flex-grow-0 flex-shrink-0 relative rounded-l-[5px] h-[28px]">
+                    <button (click)="adjustQuantity(item, 'decrease')"
+                        class="text-gray-500 focus:outline-none focus:text-gray-600">
+                        <svg class="h-5 w-5 text-slate-900" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                        </svg>
+                    </button>
+
+                    <span class="text-gray-700 mx-2"> {{item.quantity}} </span>
+
+                    <button (click)="adjustQuantity(item, 'increase')"
+                        class="text-gray-500 focus:outline-none focus:text-gray-600">
+                        <svg class="h-5 w-5 text-slate-900" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="12" y1="8" x2="12" y2="16" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                        </svg>
+                    </button>
+
+                </div>
+                </div>
+
+                <div class="flex">
+                  <div class="text-right">
+                    <p class="text-sm font-bold text-orange-600">S/ {{item.product.precio}} </p>
+                    <p class="text-xs text-gray-500">Precio original: <span class="text-sm font-bold line-through">S/ {{item.product.precio}} 
+                      </span></p>
+                    <div class="mt-1 flex flex-row items-center gap-2">
+                      <svg class="h-3 w-3 rotate-90 stroke-2 text-orange-700" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                        </path>
+                      </svg>
+                      <p class="text-xs font-normal text-neutral-400">Título del descuento</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+
+
+
+      <!-- Total de la bolsa de compras -->
+
+      <div class="sticky space-y-4 rounded-sm border border-neutral-200 bg-white py-6 px-4 shadow-sm sm:px-6 md:w-1/3">
+        <!-- pricing totals -->
+        <h4 class="text-2xl font-bold">Resumen de la orden</h4>
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between text-base text-gray-900">
+            <p>Sub Total</p>
+            <p>{{ totalPrecio | number:'1.2-2' }}</p>
+          </div>
+          <div class="flex justify-between text-base text-gray-900">
+            <p>Envio</p>
+            <p>262.00</p>
+          </div>
+          <div class="flex justify-between text-base text-gray-900">
+            <p>IGV</p>
+            <p>262.00</p>
+          </div>
+          <div class="flex justify-between text-base text-gray-900">
+            <p>Descuento</p>
+            <p>262.00</p>
+          </div>
+          <div class="flex flex-row items-center justify-end gap-2">
+            <svg class="h-4 w-4 rotate-90 stroke-2 text-orange-600" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+              </path>
+            </svg>
+            <p class="text-xs font-normal text-neutral-400">Título del descuento</p>
+          </div>
+          <div class="flex flex-row items-center justify-end gap-2">
+            <svg class="h-4 w-4 rotate-90 stroke-2 text-orange-600" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+              </path>
+            </svg>
+            <p class="text-xs font-normal text-neutral-400">Descuento extra</p>
+          </div>
+          <div>
+            <div class="my-2 w-full border-t border-gray-300"></div>
+            <div class="flex justify-between text-base font-bold text-gray-900">
+              <p>Total</p>
+              <p>1200,-</p>
+            </div>
+            <p class="mt-0.5 text-sm text-gray-400">Incluye IGV</p>
+          </div>
+          <!-- checkout button -->
+          <div class="mt-auto flex flex-col gap-2 pt-4">
+            <div class="">
+              <a href="/delivery"
+                class="flex items-center justify-center rounded-md border border-transparent bg-neutral-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-neutral-900">
+                Comprar
+              </a>
+            </div>
+            <div class="flex justify-center text-center text-sm text-gray-500">
+              <p>
+                o <button onclick="window.location.href='/category'" type="button" class="font-medium text-neutral-600 hover:text-neutral-500"> Continuar
+                  comprando<span aria-hidden="true"> &rarr;</span></button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

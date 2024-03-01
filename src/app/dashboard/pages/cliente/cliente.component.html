@@ -1,0 +1,57 @@
+<app-title title="Clientes"/>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+    <div class="bg-white rounded shadow p-10">
+        <h2 class="text-2xl font-bold mb5"> if: {{showContent()}}</h2>
+
+        <!-- if-->
+        <button 
+            class="p-2 bg-blue-500 rounded text-white"
+            (click)="toggleContent()">
+            Click me!
+        </button>
+        
+        @if(showContent()){
+            <p> Hola mundo soy cristian un programador profesional</p>
+        } @else {
+            <p>y gran arquitecto de software y ciberseguridad</p>
+        }
+    </div>
+
+        <!-- switch-->
+    <div class="bg-white rounded shadow p-10">
+        @switch(grade()){
+            @case ('A') {
+                <p> Hola mundo soy cristian un programador profesional</p>
+            }
+            @case ('B') {
+                <p>y gran arquitecto de software y ciberseguridad</p>
+            }
+            @default {
+                <p>Un gran profesional de IT</p>
+            }
+        }
+    </div>
+
+        <!-- for-->
+    <div class="bg-white rounded shadow p-10">
+        <ul>
+            @for (framework of frameworks(); track frameworks; let i = $index) {
+
+                <li>{{i +1}}: {{framework}}</li>
+
+            }
+        </ul>
+    </div>
+    <div class="bg-white rounded shadow p-10">
+        <ul>
+            @for (framework of frameworks2(); track $index) {
+                <li>{{framework}}</li>
+
+            }@empty {
+                <li>No hay frameworks en la lista</li>
+            }
+        </ul>
+    </div>
+</section>
